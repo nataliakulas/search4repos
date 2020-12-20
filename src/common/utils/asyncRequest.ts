@@ -1,9 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import request, { Options } from './request';
 
-const asyncRequest = ({ state, route }: { state: string; route: string }) =>
+const asyncRequest = ({ state, route }: { state: string; route?: string }) =>
   createAsyncThunk(`${state}`, async (options: Options, { rejectWithValue }) => {
-    const response = await request({ route, ...options }).then((response) => response);
+    const response = await request({
+      route: !!route?.length ? route : options.route,
+      ...(options.route ? {} : options),
+    }).then((response) => response);
 
     if (response.status === 200) {
       return response.data;

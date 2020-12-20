@@ -1,7 +1,10 @@
 export type Result = {
   id: number;
-  repo: string;
-  owner: string;
   stargazers: number;
   language: string;
+} & Details;
+
+export type Details = {
+  owner: string;
+  repo: string;
 };
