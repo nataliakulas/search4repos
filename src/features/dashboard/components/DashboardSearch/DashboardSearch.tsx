@@ -1,8 +1,12 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Button } from 'common/components';
+import { searchRequest } from '../../slice';
 import { StyledFieldset, StyledInput } from './styles';
 
 const DashboardSearch = () => {
+  const dispatch = useDispatch();
+
   const [value, setValue] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
@@ -10,8 +14,14 @@ const DashboardSearch = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(value);
+    dispatch(searchRequest({ q: value }));
   };
+
+  useEffect(() => {
+    return () => {
+      setValue('');
+    };
+  }, [dispatch]);
 
   return (
     <form onSubmit={handleSubmit}>
