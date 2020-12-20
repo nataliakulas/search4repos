@@ -28,4 +28,9 @@ export const StyledHeader = styled.header`
     color: ${color.blue};
     background-color: ${color.white};
   }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
