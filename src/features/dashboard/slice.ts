@@ -1,18 +1,13 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'app/store';
-import request from 'common/utils/request';
+import { methods } from 'common/methods';
+import { dashboard } from './enums/dashboard';
+import asyncRequest from 'common/utils/asyncRequest';
 import { adaptCount, adaptResults } from './utils/adapters';
 
-export const searchRequest = createAsyncThunk('search', async (values: { q: string }, { rejectWithValue }) => {
-  const { q } = values;
-
-  const response = await request({ q }).then((response) => response);
-
-  if (response.status === 200) {
-    return response.data;
-  }
-  // @ts-ignore
-  return rejectWithValue(response.message);
+export const searchRequest = asyncRequest({
+  state: `${dashboard.name}/${dashboard.search}`,
+  route: `${methods.get} /${dashboard.search}/${dashboard.repositories}`,
 });
 
 const initialState = {
@@ -21,7 +16,7 @@ const initialState = {
 };
 
 const slice = createSlice({
-  name: 'dashboard',
+  name: dashboard.name,
   initialState,
   reducers: {
     resetResults: () => initialState,

@@ -14,7 +14,7 @@ const DashboardSearch = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    dispatch(searchRequest({ q: value }));
+    dispatch(searchRequest({ q: value, page: 1, per_page: 10 }));
   };
 
   useEffect(() => {
