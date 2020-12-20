@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import { Header } from 'common/components';
 import { methods } from 'common/methods';
 import { result } from 'features/result/enums/result';
-import { Details } from 'features/dashboard/types';
+import { Details } from 'common/types';
 import { ResultDetails } from '../components';
 import { resetResult, resultRequest } from 'features/result/slice';
 import { StyledResultPage } from './styles';

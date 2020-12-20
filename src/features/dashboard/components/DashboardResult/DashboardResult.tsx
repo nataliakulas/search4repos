@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Col } from 'react-grid-system';
 import { repoPath } from 'app/Router/utils';
-import { Result } from '../../types';
+import { Result } from 'common/types';
 import { StyledDashboardResult, StyledLink } from './styles';
 
 const DashboardResult = ({ result: { repo, owner, stargazers, language } }: { result: Result }) => (

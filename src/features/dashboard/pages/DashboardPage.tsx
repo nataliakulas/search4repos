@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row } from 'react-grid-system';
-import { Result } from '../types';
+import { Result } from 'common/types';
 import { Header } from 'common/components';
 import { DashboardHeader, DashboardPlaceholder, DashboardResult, DashboardSearch } from '../components';
 import { resetResults, selectCount, selectResults } from '../slice';

@@ -1,4 +1,4 @@
-import { Result } from '../types';
+import { Result } from 'common/types';
 
 export const adaptCount = ({ total_count }: { total_count: number }) => total_count;
 

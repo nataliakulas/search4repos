@@ -8,3 +8,9 @@ export type Details = {
   owner: string;
   repo: string;
 };
+
+export type Rest = {
+  description: string;
+  subscribers: number;
+  updated: string;
+};
