@@ -1,16 +1,29 @@
 import styled from 'styled-components';
+import color from 'common/styles/colors';
 import { PanelMixin } from 'common/styles/mixins';
 
 export const StyledResultDetails = styled.div`
   ${PanelMixin};
 
-  height: 50vh;
+  height: 60vh;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 
   font-size: 2.1rem;
 
-  margin: 10rem 0;
+  margin: 5rem 0;
+  padding: 4rem;
+`;
+
+export const StyledResultHeader = styled.header`
+  margin-bottom: 2rem;
+`;
+
+export const StyledResultDetail = styled.p`
+  font-size: 1.4rem;
+
+  span {
+    color: ${color.black};
+  }
 `;
