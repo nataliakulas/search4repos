@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import color from 'common/styles/colors';
+import { PanelMixin } from 'common/styles/mixins';
 
 export const StyledDashboardPlaceholder = styled.div`
-  width: 100%;
+  ${PanelMixin};
+
   height: 50vh;
 
   display: flex;
@@ -10,13 +11,8 @@ export const StyledDashboardPlaceholder = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: ${color.blue};
   font-size: 2.1rem;
   text-align: center;
-
-  border-radius: 0.8rem;
-  background-color: ${color.white};
-  box-shadow: 0 0.2rem 2rem 0 ${color.black + '26'};
 
   margin: 10rem 0;
   
