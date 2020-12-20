@@ -1,6 +1,6 @@
 import { Col, Row } from 'react-grid-system';
 import { Header } from 'common/components';
-import DashboardSearch from '../components/DashboardSearch';
+import { DashboardPlaceholder, DashboardSearch } from '../components';
 import { StyledDashboardPage } from './styles';
 
 const DashboardPage = () => (
@@ -12,6 +12,7 @@ const DashboardPage = () => (
           <DashboardSearch />
         </Col>
       </Row>
+      <DashboardPlaceholder />
     </StyledDashboardPage>
   </>
 );
